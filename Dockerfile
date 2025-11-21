@@ -14,7 +14,7 @@ RUN python -m pip install -r requirements.txt
 RUN apt -y update
 RUN apt install ffmpeg -y
 
-# TODO: Make is so I don'y need ffmpeg
+# TODO: #1 Find a way to remove ffmpeg as a dependency
 
 WORKDIR /app
 COPY . /app
