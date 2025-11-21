@@ -1,0 +1,26 @@
+services:
+  spotibot:
+    container_name: SpotiBot
+    image: ghcr.io/tommydzierzak/spotibot:latest
+    #build:
+    #  context: .
+    #  dockerfile: ./Dockerfile
+    environment:
+      - SPOTIPY_CLIENT_ID=
+      - SPOTIPY_CLIENT_SECRET=
+      - REDIRECT_URI=http://localhost:8888/callback
+      - telegramToken=
+      - adminChatID=
+      - playlistID=
+      - bannedPlaylistID=
+      - MESSAGE1=No preview found, added to playlist tho
+      - MESSAGE2=Already in playlist
+      - MESSAGE3=Already in playlist
+      - MESSAGE4=SONG IS BANNED
+      - STICKER1=CAACAgIAAxkBAAEKjmVlMUT60gEqU8YzNwuIaXp0HiA49AACJwEAAlKJkSMTI3f3KnjQfTAE
+      - STICKER2=CAACAgIAAxkBAAEn-6NlaL2-gXs1GzxSF2Jtp4NndJZzOwACRwEAAlKJkSMDBgYs0ffwdTME
+      - STICKER3=CAACAgIAAxkBAAEn-7tlaMBalKVuzInJf-EM4SH_3n1o4gACTAEAAlKJkSMs5CodLDEGAjME
+      - STICKER4=CAACAgIAAxkBAAEp1SFl35yRD-PVNJP8g8-_E8pNv6RtJAACKgEAAlKJkSM_2dC0M_P_EjQE
+    ports:
+      - 8888:8888
+    restart: unless-stopped
